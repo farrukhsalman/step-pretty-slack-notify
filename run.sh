@@ -9,9 +9,9 @@ if which ruby > /dev/null 2>&1 ; then
   RUBY_PATH=$(which ruby)
   RUBY_OWNER=$(ls -l "${RUBY_PATH}" | tr -s ' ' | cut -d ' ' -f 3)
 
-  echo "Ruby Version: $(ruby -v)"
-  echo "Ruby Path: ${RUBY_PATH}"
-  echo "Install User: ${CURRENT_USER}"
+  echo "Ruby Version - : $(ruby -v)"
+  echo "Ruby Path - : ${RUBY_PATH}"
+  echo "Install User - : ${CURRENT_USER}"
   echo ""
 
   cd $WERCKER_STEP_ROOT
@@ -21,7 +21,7 @@ if which ruby > /dev/null 2>&1 ; then
       gem install bundler:1.11.2
     fi
 
-    echo "Installing slack-notifier..."
+    echo "Installing slack-notifier. -----..."
     bundle install
 
     bundle exec $WERCKER_STEP_ROOT/run.rb
